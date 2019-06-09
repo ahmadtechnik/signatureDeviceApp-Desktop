@@ -1,6 +1,6 @@
 {
     "serverData" : {
-        "IP" : "localhost",
+        "IP" : "lo11calhost",
         "PORT" : "3000",
         "PROTOCOL" : "https",
         "DIR" : "client_side_home"
