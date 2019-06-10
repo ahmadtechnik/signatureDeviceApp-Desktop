@@ -15,14 +15,30 @@
     <!-- import semantic -->
     <link rel="stylesheet" href="assets/semantic-ui-css/semantic.css">
     <script src="./assets/semantic-ui-css/semantic.js"></script>
+
+    <!-- import jquery ui -->
+    <link rel="stylesheet" href="assets/jQueryUI/jquery-ui.css">
+    <script src="assets/jQueryUI/jquery-ui.js"></script>
 </head>
 
-<body>
-    <div class="ui segment padded">
-        <div class="ui form">
+<body class="transition hidden" id="body">
+    <div class="top_bar_menu ">
+        <a class="close_btn_icon" id="closeWindowBtn">X</a>
+        <span class="errorMessageText" id="errorMessageText"></span>
+        <span class="subErrorMsg" id="subErrorMsg">
+            There is an connection error,
+            please enter server information then press "Submit" button
+        </span>
+    </div>
+    <div class="ui segment padded" id="formElementsContainer">
+        <div class="ui form mini">
             <div class="field">
                 <label>Protocol</label>
-                <input type="text"  placeholder="HTTP / HTTPS">
+                <select class="ui selection dropdown" id="protocolField">
+                    <option value="">Please select</option>
+                    <option value="http">HTTP</option>
+                    <option value="https">HTTPS</option>
+                </select>
             </div>
             <div class="field">
                 <label>Server Host Name</label>
@@ -32,9 +48,9 @@
                 <label>Port number</label>
                 <input type="number" id="portNumberField" placeholder="80 , 88 , 3000">
             </div>
-            <div class="field">
+            <div class="field disabled">
                 <label>Client dir</label>
-                <input type="text" id="subDirField" placeholder="/client_side_home" value="/client_side_home">
+                <input type="text" id="subDirField" placeholder="client_side_home" value="client_side_home">
             </div>
             <button class="ui button blue mini" id="submitDataBtn">Submit</button>
         </div>
